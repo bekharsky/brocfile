@@ -1,14 +1,17 @@
-run: dist/index.js
-	@node dist/index.js
+run: dist/static/js/script.js
+	@node dist/static/js/script*.js
 
-dist/index.js: src/index.js
+dist/static/js/script.js: src/js/index.js
 	@make clean
 	./node_modules/.bin/broccoli build dist
 
 clean:
 	@rm -rf dist || true
 
-test:
-	./node_modules/.bin/mocha --compilers js:babel-core/register
+serve:
+	./node_modules/.bin/broccoli serve
 
-.PHONY: test
+# test:
+# 	./node_modules/.bin/mocha --compilers js:babel-core/register
+
+# .PHONY: test

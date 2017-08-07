@@ -31,11 +31,19 @@ var appJs = babel(jsDir);
 
 appJs = watchify(appJs, {
   browserify: {
-    entries: ['app.js'],
+    entries: ['index.js'],
     paths: ['.', __dirname + '/node_modules'],
   },
   outputFile: 'static/js/script.js',
 });
+
+if (BUILDING) {
+  appJs = uglify(appJs, {
+    mangle: {
+      except: ['global']
+    }
+  });
+}
 
 // Grab legacy scripts in particular order
 // var legacyFiles = [
@@ -53,10 +61,6 @@ appJs = watchify(appJs, {
 //     outputFile: 'static/js/legacy.js'
 //   });
 // }
-
-if (BUILDING) {
-  appJs = uglify(appJs);
-}
 
 // Compile SCSS styles
 var styles = new Sass([sassDir, 'node_modules'],
@@ -112,7 +116,7 @@ if (BUILDING) {
   exports = new AssetRev(exports, {
     extensions: ['js', 'css', 'png', 'jpg', 'gif'],
     replaceExtensions: ['html', 'js', 'css'],
-    exclude: ['share/fb.jpg', 'share/vk.jpg'],
+    exclude: ['share/fb.jpg', 'share/vk.jpg', 'js/check.js'],
   });
 } else if (SERVING) {
   // Set up live reloading via BrowserSync
