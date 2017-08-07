@@ -1,0 +1,22 @@
+// Colors
+$white: #fff;
+$black: #000;
+
+$error: #bd0000;
+
+$base-width: 1920;
+$base-font: 16;
+
+$dur: .3s;
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function vw($num) {
+  @return strip-unit($num) / $base-width * 100vw;
+}
+
+@function rem($num) {
+  @return strip-unit($num) / $base-font * 1rem;
+}

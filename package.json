@@ -1,0 +1,27 @@
+{
+  "name": "markup",
+  "version": "0.0.2",
+  "description": "Markup template with Broccoli.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alinaki",
+  "license": "ISC",
+  "devDependencies": {
+    "broccoli": "1.1.2",
+    "broccoli-asset-rev": "^2.5.0",
+    "broccoli-autoprefixer": "^4.1.0",
+    "broccoli-babel-transpiler": "^5.6.2",
+    "broccoli-browser-sync-bv": "^1.0.0",
+    "broccoli-concat": "^3.0.5",
+    "broccoli-funnel": "^1.2.0",
+    "broccoli-merge-trees": "^1.2.1",
+    "broccoli-sass": "^0.7.0",
+    "broccoli-uglify-sourcemap": "^1.5.1",
+    "broccoli-watchify": "^1.0.1",
+    "jquery": "^3.2.1",
+    "normalize-scss": "^6.0.0"
+  },
+  "dependencies": {}
+}
