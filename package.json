@@ -1,6 +1,6 @@
 {
   "name": "markup",
-  "version": "0.0.2",
+  "version": "0.5.0",
   "description": "Markup template with Broccoli.js",
   "main": "index.js",
   "scripts": {
