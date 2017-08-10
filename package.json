@@ -4,7 +4,9 @@
   "description": "Markup template with Broccoli.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/broccoli serve",
+    "build": "rm -rf dist && ./node_modules/.bin/broccoli build dist"
   },
   "author": "Alinaki",
   "license": "ISC",
