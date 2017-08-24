@@ -1,5 +1,6 @@
 import checkBuild from 'check';
-// import {$, jQuery} from 'jquery';
+// import $ from 'jquery';
+// import jQuery from 'jquery';
 
 checkBuild();
 
