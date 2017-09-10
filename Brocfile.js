@@ -21,6 +21,7 @@ var babel = require('broccoli-babel-transpiler'); // Babel transpiler
 var uglify = require('broccoli-uglify-sourcemap'); // UglifyJS
 var watchify = require('broccoli-watchify'); // Watchify
 var autoprefixer = require('broccoli-autoprefixer'); // Autoprefixer
+var ImageMin = require('broccoli-image-min'); // Imagemin
 
 var srcDir = 'src';
 var sassDir = srcDir + '/scss';
@@ -82,11 +83,19 @@ var html = new Funnel(srcDir, {
 });
 
 // Grab images
-var images = new Funnel(srcDir, {
-  srcDir: 'img',
-  destDir: 'static/img',
-  allowEmpty: true,
-});
+var images = null;
+if (BUILDING) {
+  images = new ImageMin(`${srcDir}/img`, {
+    include: ['**/*.{jpg,png}'],
+    destination: 'static/img'
+  });
+} else {
+  images = new Funnel(srcDir, {
+    srcDir: 'img',
+    destDir: 'static/img',
+    allowEmpty: true,
+  });
+}
 
 // Grab share
 var share = new Funnel(srcDir, {

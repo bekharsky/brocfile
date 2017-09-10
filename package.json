@@ -18,6 +18,7 @@
     "broccoli-cli": "^1.0.0",
     "broccoli-concat": "^3.0.5",
     "broccoli-funnel": "^1.2.0",
+    "broccoli-image-min": "^1.1.0",
     "broccoli-merge-trees": "^1.2.1",
     "broccoli-sass": "^0.7.0",
     "broccoli-uglify-sourcemap": "^1.5.1",
